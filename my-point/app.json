@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "Meu Point",
+    "slug": "my-point",
+    "version": "2.0",
+    "orientation": "portrait",
+    "scheme": "com.gazua300.mypoint",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#CC9900"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gazua300.mypoint"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "permissions": [
+        "ACCESS_FOREGROUND_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "versionCode": 11,
+      "package": "com.gazua300.mypoint",
+      "googleServicesFile": "./google-services.json"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "837330ff-79a9-41b7-88b9-6e7d7cb10638"
+      }
+    }
+  }
+}

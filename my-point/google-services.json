@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "359634141602",
+    "project_id": "my-point-4f7e1",
+    "storage_bucket": "my-point-4f7e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359634141602:android:204146d6134ef1f048b2fb",
+        "android_client_info": {
+          "package_name": "com.gazua300.mypoint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359634141602-hreq4b6vjfo4fgs5q5mbbdakmc4enk6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZxNtAj0rFqCa1zj8O34sA8ztxD4V2f8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359634141602-hreq4b6vjfo4fgs5q5mbbdakmc4enk6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
