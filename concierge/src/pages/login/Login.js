@@ -94,13 +94,13 @@ const Login = (props)=>{
                         onChangeText={setEmail}
                         width={'85%'}
                         value={email}
-                        placeholder={'nome@email.com'}/>    
+                        placeholder={'youremail@email.com'}/>    
                     <View style={{marginVertical:10}}/>                
                     <DefaultInput
                         width={'85%'}
                         onChangeText={setPassword}
                         value={password}
-                        placeholder={'Sua senha'}
+                        placeholder={'Password'}
                         secureTextEntry={visivel}/>
                     <TouchableOpacity style={styles.eye}
                         onPress={visibilidade}>
@@ -111,7 +111,7 @@ const Login = (props)=>{
                     <TouchableOpacity style={{alignItems:'center'}}
                         onPress={()=> props.navigation.navigate('RedefinirSenha')}>
                         <Text style={[styles.txtStyle, {color:'blue', marginVertical:15}]}>
-                            Esqueceu sua senha
+                            Forgot you password
                         </Text>
                     </TouchableOpacity>
                     <View style={styles.btnContainer}>
@@ -122,9 +122,9 @@ const Login = (props)=>{
                             buttonText={'Entrar'}
                             handlePress={login}/>
                     </View>
-                    <Text style={styles.txtStyle}>Ainda não tem cadastro? Clique
+                    <Text style={styles.txtStyle}>You're not subscribed yet? Click
                         <Text style={{color:'blue', fontSize:20}}
-                            onPress={()=> props.navigation.navigate('CreateClient')}> aqui</Text>
+                            onPress={()=> props.navigation.navigate('CreateClient')}> here</Text>
                     </Text>
             </View>
         </ImageBackground>

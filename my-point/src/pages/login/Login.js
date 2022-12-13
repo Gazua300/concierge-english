@@ -131,7 +131,7 @@ const Login = (props)=>{
                             handlePress={login}
                             />
                     </View>                    
-                    <Text style={styles.txtStyle}>Not subscribed yet? Click
+                    <Text style={styles.txtStyle}>You're not subscribed yet? Click
                         <Text style={{color:'blue', fontSize:20}}
                             onPress={()=> props.navigation.navigate('Signup')}> here</Text>
                     </Text>

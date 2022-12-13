@@ -17,7 +17,6 @@ import {
 
 const InsertAdress = (props)=>{
     const { states, setters, requests } = useContext(Context)
-    const placeholderBackground = 'rgba(255, 255, 255, 0.4)'
     const [endereco, setEndereco] = useState('')
     const [contato, setContato] = useState('')
     const [servico, setServico] = useState('')
@@ -73,35 +72,35 @@ const InsertAdress = (props)=>{
                         margin={measure}
                         onChangeText={setEndereco}
                         value={endereco}
-                        placeholder={'Rua / Av, Nº - Bairro'}/>
+                        placeholder={'Place address'}/>
                     <DefaultInput
                         margin={measure}
                         onChangeText={setContato}
                         value={contato}
                         keyboardType={'numeric'}
-                        placeholder={'DDD e telefone'}/>
+                        placeholder={'Area code and phone number'}/>
                     <DefaultInput
                         margin={measure}
                         onChangeText={setServico}
                         value={servico}
-                        placeholder={'Serviço oferecido'}/>
+                        placeholder={'Service offered'}/>
                     <DefaultInput
                         margin={measure}
                         onChangeText={setMesas}
                         value={mesas}
                         keyboardType={'numeric'}
-                        placeholder={'Ocupação - mesas / lugares'}/>
+                        placeholder={'Number of tables'}/>
                     <DefaultInput
                         margin={measure}
                         onChangeText={setResponsavel}
                         value={responsavel}
-                        placeholder={'Nome do responsável'}/>
+                        placeholder={'Responsible person'}/>
                     <View style={styles.btnContainer}>
                         <DefaultButton
-                            buttonText={'Limpar'}
+                            buttonText={'Erase'}
                             handlePress={limpar}/>
                         <DefaultButton
-                            buttonText={'Salvar'}
+                            buttonText={'Save'}
                             handlePress={register}/>
                     </View>
                 </ScrollView>

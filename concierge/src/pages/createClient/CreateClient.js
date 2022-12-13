@@ -86,17 +86,17 @@ const CreateClient = (props)=>{
                     <DefaultInput
                         onChangeText={setNome}
                         value={nome}
-                        placeholder={'Nome do estabelecimento'}
+                        placeholder={'Name of the place'}
                         margin={inputMargin}/>
                     <DefaultInput
                         onChangeText={setEmail}
                         value={email}
-                        placeholder={'nome@emial.com'}
+                        placeholder={'place@email.com'}
                         margin={inputMargin}/>
                     <DefaultInput
                         onChangeText={setPassword}
                         value={password}
-                        placeholder={'Senha'}
+                        placeholder={'Password'}
                         secureTextEntry={visivel}
                         margin={inputMargin}/>
                     <TouchableOpacity style={styles.eye}
@@ -107,7 +107,7 @@ const CreateClient = (props)=>{
                         onChangeText={setConfSenha}
                         value={confSenha}
                         secureTextEntry={visivel2}
-                        placeholder={'nome@emial.com'}
+                        placeholder={'Confirm your password'}
                         margin={inputMargin}/>
 
                     <TouchableOpacity style={styles.eye2}
