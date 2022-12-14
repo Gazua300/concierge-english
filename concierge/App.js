@@ -54,7 +54,10 @@ export default function App() {
             name="Login"
             component={Login}
             options={{
-              title: 'Login'
+              title: 'Login',
+              headerLeft: ()=>(
+                <View/>
+              )
             }}/>
 
           <Stack.Screen
@@ -137,7 +140,7 @@ export default function App() {
             name="Pedidos"
             component={Pedidos}
             options={({navigation})=>({
-              title: 'Pedidos do cliente',
+              title: 'Requests of the client',
               headerRight: ()=> (
                 <TouchableOpacity onPress={()=> navigation.navigate('EnviarNotificacao')}>
                   <Send name="send" color='whitesmoke' size={25}/>
@@ -163,7 +166,7 @@ export default function App() {
             name="RedefinirSenha"
             component={RedefinirSenha}
             options={({navigation})=>({
-              title: 'Redefinição de senha'
+              title: 'Reset password'
             })}
             />
           

@@ -121,11 +121,11 @@ export const GlobalState = (props)=>{
     
     const mostrarUsuario = async()=>{
       const id = await AsyncStorage.getItem('id')
-
+console.log('Id do aysnc storage:', id)
       axios.get(`${url}/user/${id}`).then(res=>{
           setPerfil(res.data)
       }).catch(e=>{
-          console.log(`Erro ao pegar perfil na função mostrarUsuario ${e}`)
+          console.log(`Erro ao pegar perfil na função mostrarUsuario:`, e.response.data)
       })
     } 
     

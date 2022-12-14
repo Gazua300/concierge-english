@@ -36,7 +36,7 @@ const EnviarNotificacao = (props)=>{
                     onChangeText={setTitulo}
                     value={titulo}
                     placeholderTextColor={placeholderBackground}
-                    placeholder="Título da mensagem"/>
+                    placeholder="Title"/>
 
                 <TextInput style={styles.textarea}
                     onChangeText={setMsg}
@@ -44,13 +44,13 @@ const EnviarNotificacao = (props)=>{
                     multiline={true}
                     numberOfLines={5}
                     placeholderTextColor={placeholderBackground}
-                    placeholder='Mensagem'/>
+                    placeholder='Message'/>
                 <View style={styles.btnContainer}>
                     <DefaultButton
-                        buttonText={'Limpar'}
+                        buttonText={'Erase'}
                         handlePress={limpar}/>
                     <DefaultButton
-                        buttonText={'Enviar'}
+                        buttonText={'Send'}
                         handlePress={()=> requests.sendPushNotification(
                             states.cliente.push_token,
                             titulo,

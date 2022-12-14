@@ -34,11 +34,11 @@ const Pedidos = (props)=>{
     
     const remover = (pedido)=>{
         Alert.alert(
-            'Tem certeza que quer excluir o  pedido?',
-            `Verfique se o mesmo já foi atendido ou pago.`,
+            'Are you sure you want to remove the request?',
+            `Verify if it's paid off.`,
             [
                 {
-                    text:'Cancelar',                                        
+                    text:'Cancel',                                        
                 },
                 {
                     text:'Ok',
@@ -46,8 +46,8 @@ const Pedidos = (props)=>{
                         deletePedido(pedido.id)
                         requests.sendPushNotification(
                             states.cliente.push_token,
-                            'Pedido deletado',
-                            `O estabelecimento acabou de excluir seu pedido de ${pedido.pedido}`
+                            'Reuqest removed',
+                            `Establishment removed your request of ${pedido.pedido}`
                         )
                     }
                 }
@@ -62,8 +62,8 @@ const Pedidos = (props)=>{
             alert(res.data)
             requests.sendPushNotification(
                 states.cliente.push_token,
-                'Fechamento de conta',
-                'Sua conta acaba de ser fechada no estabelecimento'
+                'Debt paid off',
+                'Your debt has just been paid off by establishment'
             )
             props.navigation.navigate('Home')
         }).catch(e=>{
@@ -83,11 +83,11 @@ const Pedidos = (props)=>{
         })
 
         Alert.alert(
-            'Total à pagar',
-            `Valor: R$ ${total.toFixed(2)}\n\nO cliente será noticação após o fechamento da conta.`,
+            'Total to pay',
+            `Debt: $ ${total.toFixed(2)}\n\nClient will be notified.`,
             [
                 {
-                    text: 'Cancelar'
+                    text: 'Cancel'
                 },
                 {
                     text: 'Ok',
@@ -111,30 +111,30 @@ const Pedidos = (props)=>{
                         <View style={styles.card}>
                             <View>
                                 <Text style={styles.txtStyle}>
-                                    {pedido.pedido} - Mesa {pedido.mesa}{'\n'}     
+                                    {pedido.pedido} - Table {pedido.mesa}{'\n'}     
                                     <Text style={{fontSize:15, fontWeight:'normal'}}>
-                                        Pedido feito as {pedido.ordem}
+                                        Request made at {pedido.ordem}
                                     </Text>                               
                                 </Text>                                
                             </View>
                             <View>
                                 <Text style={styles.pedido}>
                                     <Text style={{fontWeight:'bold'}}>
-                                        Valor:
-                                    </Text> R$ {pedido.preco.toFixed(2)}{'\n'}
+                                        Value:
+                                    </Text> $ {pedido.preco.toFixed(2)}{'\n'}
                                     <Text style={{fontWeight:'bold'}}>
-                                        Quantidade:
+                                        Quantity:
                                     </Text> {pedido.quantidade}{'\n'}
                                     <Text style={{fontWeight:'bold'}}>
                                         Total:
-                                    </Text> R$ {pedido.total.toFixed(2)}
+                                    </Text> $ {pedido.total.toFixed(2)}
                                 </Text>
                             </View>
                             <View style={{alignItems:'center', marginTop:10}}>
                                 <DefaultButton
                                     width={'90%'}
                                     handlePress={()=> remover(pedido)}
-                                    buttonText={'Remover'}/>
+                                    buttonText={'Remove'}/>
                             </View>                                
                         </View>
                     )}/>

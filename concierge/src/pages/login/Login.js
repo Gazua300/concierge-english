@@ -116,10 +116,10 @@ const Login = (props)=>{
                     </TouchableOpacity>
                     <View style={styles.btnContainer}>
                         <DefaultButton
-                            buttonText={'Limpar'}
+                            buttonText={'Erase'}
                             handlePress={limpar}/>
                         <DefaultButton
-                            buttonText={'Entrar'}
+                            buttonText={'Enter'}
                             handlePress={login}/>
                     </View>
                     <Text style={styles.txtStyle}>You're not subscribed yet? Click

@@ -116,10 +116,10 @@ const CreateClient = (props)=>{
                     </TouchableOpacity>                    
                     <View style={styles.btnContainer}>
                         <DefaultButton
-                            buttonText={'Limpar'}
+                            buttonText={'Erase'}
                             handlePress={limpar}/>
                         <DefaultButton
-                            buttonText={'Registrar'}
+                            buttonText={'Save'}
                             handlePress={signUp}/>
                     </View>
                 </ScrollView>

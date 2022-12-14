@@ -28,7 +28,7 @@ const Perfil = (props)=>{
     const [resultado, setResultado] = useState('')
     const [visivel, setVisivel] = useState(false)
     const [icone, setIcone] = useState('eye-with-line')
-      
+    
 
    
     useEffect(()=>{

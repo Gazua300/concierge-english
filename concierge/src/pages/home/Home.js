@@ -24,7 +24,6 @@ const Home = (props)=>{
     const [clientes, setClientes] = useState([])
     
 
-    console.log('Pedidos: ', pedidos.length)
         
     useEffect(()=>{
         clientesPorLocal()
