@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import Context from "../../global/Context"
 import Eye from 'react-native-vector-icons/Entypo'
+import AsyncStorage from "@react-native-async-storage/async-storage"
 import axios from 'axios'
 import { url } from "../../constants/url"
 import DefaultButton from "../../components/DefaultButton"
@@ -60,8 +61,8 @@ const Signup = (props)=>{
             confirmSenha: confSenha,
             push_token: states.expoPushToken
         }
-        axios.post(`${url}/user`, body).then(res=>{
-            setters.getId(res.data)
+        axios.post(`${url}/user`, body).then(async(res)=>{
+            await AsyncStorage.setItem('id', res.data)
             props.navigation.navigate('Home')
         }).catch(e=>{
             Alert.alert(

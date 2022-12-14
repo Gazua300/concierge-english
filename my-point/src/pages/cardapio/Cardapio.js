@@ -17,6 +17,7 @@ import {
 
 const Cardapio = (props)=>{      
     const { states, setters, requests } = useContext(Context)
+    const perfil = states.perfil
     const [cardapio, setCardapio] = useState([])
     const [refreshing, setRefreshing] = useState(false)
 
@@ -59,10 +60,11 @@ const Cardapio = (props)=>{
 
 
     const fazerPedido = (id)=>{
-        if(!states.perfil.mesa){
+        requests.mostrarUsuario()
+        if(!perfil.mesa){
             Alert.alert(
-                'Necessário ter um lugar no estabelecimento:',
-                'Você ainda não ocupou uma mesa. Por favor, volte até a página incial e escolha uma mesa livre',
+                'You need to choose a table first:',
+                `You didn't take a seat. Please return to the last page and choose a vacant table`,
                 [
                     {
                         text:'Cancelar'
@@ -73,6 +75,11 @@ const Cardapio = (props)=>{
                         onPress: ()=> props.navigation.navigate('Estabelecimento')
                     }
                 ]
+            )
+        }else if(!perfil.permission_id || perfil.permission_id !== perfil.estabelecimento){
+            Alert.alert(
+                'Waiting for permission to make requests:',
+                `After choosing your table the establishment will verify if you're in the place.`
             )
         }else{
             axios.get(`${url}/cardapio/${id}`).then(res=>{

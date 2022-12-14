@@ -59,24 +59,24 @@ const EditPerfil = (props)=>{
             source={require('../../img/mypoint-wallpaper.jpg')}>
             <View style={styles.container}>
                 <Text style={styles.subtitle}>
-                    Preencha com seus novos dados
+                    Fill the form with your new details
                 </Text>                        
              <View style={styles.editContainer}>
                 <DefaultInput
                     onChangeText={setNome}
                     value={nome}
-                    placeholder={'Novo nome'}/>
+                    placeholder={'New name'}/>
                 <View style={{marginVertical:10}}/>
                 <DefaultInput
                     onChangeText={setEmail}
                     value={email}
-                    placeholder={'novoemail@email.com'}/>
+                    placeholder={'newmail@email.com'}/>
                 <View style={styles.editBtnContainer}>
                     <DefaultButton
-                        buttonText={'Limpar'}
+                        buttonText={'Erase'}
                         handlePress={limpar}/>
                     <DefaultButton
-                        buttonText={'Atualizar'}
+                        buttonText={'Update'}
                         handlePress={atualizarPerfil}/>
                 </View>
             </View>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         marginVertical: 40
     },
     editContainer: {
-        margin: 30,
+        marginHorizontal: 30,
     },
     editBtnContainer: {
         display: 'flex',

@@ -117,14 +117,7 @@ export const GlobalState = (props)=>{
 
 //fim do expo-notifications
 
-    const getId = async(tk)=>{
-      try{
-          await AsyncStorage.setItem('id', tk)
-      }catch(e){
-          console.log(`Erro ao pegar o token do login ${e}`)
-      }
-    }
-
+   
     
     const mostrarUsuario = async()=>{
       const id = await AsyncStorage.getItem('id')
@@ -181,7 +174,7 @@ export const GlobalState = (props)=>{
       expoPushToken,
       conta
     }
-    const setters = { setPedido, getId, setPlace }
+    const setters = { setPedido, setPlace }
     const requests = {
       mostrarUsuario,
       sendPushNotification,

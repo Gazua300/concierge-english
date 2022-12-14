@@ -70,7 +70,7 @@ const Home = (props)=>{
             setters.setCliente(cliente)
         }).catch(e=>{
             Alert.alert(
-                e.response.data,
+                `There's no requests for this client`,
                 'Do you want to send a message?',
                 [
                     {
@@ -105,6 +105,20 @@ const Home = (props)=>{
     }
 
 
+    const permissaoDeMEsa = async(cliente)=>{
+        const id = await AsyncStorage.getItem('id')
+        const body = {
+            user: cliente.id
+        }
+
+        axios.put(`${url}/permission/${id}`, body).then(res=>{
+            alert('Permission granted')
+        }).catch(e=>{
+            alert(e.response.data)
+        })
+    }
+
+
     const remocaoDeCliente = (cliente)=>{
         axios.delete(`${url}/requests/user/${cliente.id}`).then(res=>{
             alert(`Client table ${cliente.mesa} removed`)
@@ -136,16 +150,19 @@ const Home = (props)=>{
                                 </Text>
                             </View> 
                             <View style={styles.btnContainer}>
-                            <DefaultButton
-                                buttonText={'Check requests'}
-                                handlePress={()=> pedidosPorCliente(cliente)}/>
-                            {pedidos && pedidos.length === 0 ? (
+                                <DefaultButton
+                                    buttonText={'Check requests'}
+                                    handlePress={()=> pedidosPorCliente(cliente)}/>
                                 <DefaultButton
                                     buttonText={'Remove'}
                                     handlePress={()=> confirmarRemocaoDeCliente(cliente)}/>
-                            ) : null}
-                            
-                            </View>                                
+                            </View>
+                            <View style={{alignItems:'center'}}>  
+                                <DefaultButton
+                                    width={'90%'}
+                                    buttonText={'Grant permission'}
+                                    handlePress={()=> permissaoDeMEsa(cliente)}/>   
+                            </View>                                   
                         </View>
                     )}/>  
             </View>

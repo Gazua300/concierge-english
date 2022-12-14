@@ -87,7 +87,7 @@ const Pedido = (props)=>{
                             {pedido.nome}
                         </Text>
                         <Text style={styles.txtStyle}>
-                            R$ {pedido.preco.toFixed(2)}
+                            $ {pedido.preco.toFixed(2)}
                         </Text>
                     </View>
                     <View style={styles.formContainer}>
@@ -103,9 +103,6 @@ const Pedido = (props)=>{
                             buttonText={'Request'}
                             handlePress={realizarPedido}/>
                     </View>
-                    <Text style={{color:'whitesmoke',fontSize:20, textAlign:'center'}}>
-                        {compra}
-                    </Text>
                     <Text style={{
                         color:'whitesmoke', fontSize:25, margin:30,
                         textAlign:'center'

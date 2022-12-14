@@ -74,8 +74,8 @@ const Login = (props)=>{
             senha: password
         }
         
-        axios.post(`${url}/user/login`, body).then(res=>{
-                setters.getId(res.data)
+        axios.post(`${url}/user/login`, body).then(async(res)=>{
+                await AsyncStorage.setItem('id', res.data)
                 limpar()
                 props.navigation.navigate('Home')
             }).catch(e=>{
